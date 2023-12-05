@@ -36,7 +36,7 @@ export default async function Index() {
             <h2>Bienvenue sur Lopin</h2>
             <p>La façon la plus simple de:</p>
             <ul>
-              <li>Parler de votre ferme à vos clients</li>
+              <li>Parler de votre ferme à vos voisins</li>
               <li>Trouver les fermes autour de chez vous</li>
             </ul>
           </Flex>
