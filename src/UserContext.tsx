@@ -1,23 +1,31 @@
 import { Session, User, createClient } from "@supabase/supabase-js";
-import { createContext, useContext, useEffect, useState } from "react";
+import {
+  ReactNode,
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
 export const supabase = createClient(
-  import.meta.env.VITE_SUPABASE_URL,
-  import.meta.env.VITE_SUPABASE_ANON_KEY
+  import.meta.env.VITE_SUPABASE_URL || "",
+  import.meta.env.VITE_SUPABASE_ANON_KEY || ""
 );
 
 interface AuthProviderProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 type AuthContextType = {
   session: Session | null;
   user: User | null;
+  loading: boolean;
 };
 
 const AuthContext = createContext<AuthContextType>({
   session: null,
   user: null,
+  loading: true,
 });
 
 const AuthProvider = (props: AuthProviderProps) => {
@@ -57,6 +65,7 @@ const AuthProvider = (props: AuthProviderProps) => {
   const value = {
     session,
     user,
+    loading,
   };
 
   return (
