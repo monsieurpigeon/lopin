@@ -1,17 +1,15 @@
 import { Container, Flex } from "@chakra-ui/react";
-import { ReactNode } from "react";
+import { Outlet } from "react-router-dom";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 
-interface Props {
-  children: ReactNode;
-}
-
-export function MainLayout({ children }: Props) {
+export function MainLayout() {
   return (
-    <Flex>
+    <Flex direction="column" height="100vh">
       <Header />
-      <Container>{children}</Container>
+      <Container flexGrow={1}>
+        <Outlet />
+      </Container>
       <Footer />
     </Flex>
   );
