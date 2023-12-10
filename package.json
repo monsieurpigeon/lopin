@@ -13,13 +13,16 @@
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@hookform/resolvers": "^3.3.2",
     "@supabase/auth-ui-react": "^0.4.6",
     "@supabase/supabase-js": "^2.39.0",
     "framer-motion": "^10.16.16",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
-    "react-router-dom": "^6.20.1"
+    "react-hook-form": "^7.49.0",
+    "react-router-dom": "^6.20.1",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/react": "^18.2.37",

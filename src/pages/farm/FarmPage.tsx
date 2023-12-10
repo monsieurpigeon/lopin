@@ -1,20 +1,23 @@
+import { Box, Center, Flex } from "@chakra-ui/react";
 import { Helmet } from "react-helmet";
 import { useLoaderData } from "react-router-dom";
 
 export function FarmPage() {
   const { farm } = useLoaderData() as { farm: any };
-
+  if (!farm) return <div>Cette ferme n'existe pas</div>;
   return (
     <div>
       <Helmet>
         <title>{farm.name}</title>
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
-      {farm && farm?.length !== 0 ? (
-        <div>FARM: {JSON.stringify(farm, null, 4)}</div>
-      ) : (
-        "Cette ferme n'existe pas dans la base"
-      )}
+
+      <Center height="100vh">
+        <Flex direction="column">
+          <Box>{farm.name}</Box>
+          <Box>{farm.description}</Box>
+        </Flex>
+      </Center>
     </div>
   );
 

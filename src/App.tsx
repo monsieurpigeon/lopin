@@ -2,8 +2,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import AuthProvider, { supabase } from "./UserContext";
 import { MainLayout } from "./components/layout/MainLayout";
 import { AuthPage } from "./pages/AuthPage";
-import { HomePage } from "./pages/HomePage";
 import { FarmPage } from "./pages/farm/FarmPage";
+import { HomePage } from "./pages/home/HomePage";
 
 const router = createBrowserRouter([
   {
