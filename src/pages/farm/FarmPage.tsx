@@ -9,10 +9,11 @@ export function FarmPage() {
     <div>
       <Helmet>
         <title>{farm.name}</title>
-        <meta name="og:site_name" content="Pawn Guild" />
-        <meta property="og:title" content={farm.name} />
-        <meta property="og:type" content={`https://www.lopin.app/${farm.id}`} />
-        <meta property="og:description" content={farm.description} />
+        <meta name="og:type" content="website" />
+        <meta name="og:url" content={`https://www.lopin.app/${farm.id}`} />
+        <meta name="og:title" content={farm.name} />
+        <meta name="og:description" content={farm.description} />
+        <meta name="og:site_name" content="Lopin" />
       </Helmet>
 
       <Center height="100vh">
