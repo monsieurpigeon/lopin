@@ -14,10 +14,7 @@ export function FarmPage() {
         <meta name="og:title" content={farm.name} />
         <meta name="og:description" content={farm.description} />
         <meta name="og:site_name" content="Lopin" />
-        <meta
-          property="og:image"
-          content="https://www.oseille.app/maraicher.jpg"
-        />
+        <meta name="og:image" content="https://www.oseille.app/maraicher.jpg" />
       </Helmet>
 
       <Center height="100vh">
