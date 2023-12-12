@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `https://lopin.app/${id}`,
       images: [
         {
-          url: "https://www.oseille.app/maraicher.jpg",
+          url: farm.logo_url ?? "https://www.oseille.app/maraicher.jpg",
         },
       ],
     },
