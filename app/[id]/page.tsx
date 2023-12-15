@@ -21,6 +21,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const farm = farms?.[0] as Farm;
 
+  if (!farm) {
+    return {
+      title: "404",
+    };
+  }
   return {
     title: farm.name,
     openGraph: {
@@ -47,6 +52,10 @@ export default async function Page({ params }: Props) {
     .eq("id", params.id);
 
   const farm = farms?.[0] as Farm;
+
+  if (!farm) {
+    return <div>404</div>;
+  }
 
   return (
     <div className="p-4" style={{ width: "800px" }}>
