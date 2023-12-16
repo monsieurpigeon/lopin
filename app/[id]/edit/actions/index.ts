@@ -2,8 +2,10 @@
 
 import createSupabaseServerClient from "../../../../utils/supabase/server";
 
-export async function updateFarmById(id: string, { name }: { name: string }) {
+export async function updateFarmById(
+  id: string,
+  { name, description }: { name: string; description: string }
+) {
   const supabase = await createSupabaseServerClient();
-  console.log(name, id);
-  return await supabase.from("farm").update({ name }).eq("id", id);
+  return await supabase.from("farm").update({ name, description }).eq("id", id);
 }

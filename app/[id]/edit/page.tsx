@@ -8,7 +8,7 @@ interface Props {
   params: { id: string };
 }
 
-const schema = z.object({ name: z.string() });
+const schema = z.object({ name: z.string(), description: z.string() });
 
 export default async function Page({ params }: Props) {
   const cookieStore = cookies();
@@ -23,13 +23,16 @@ export default async function Page({ params }: Props) {
   async function onSubmit(request: FormData) {
     "use server";
     const name = (request.get("name") as string) || farm.name;
-    updateFarmById(farm.id, { name });
+    const description =
+      (request.get("description") as string) || farm.description;
+    updateFarmById(farm.id, { name, description });
   }
 
   return (
     <div>
       <form action={onSubmit}>
         <input type="text" name="name" defaultValue={farm.name} />
+        <input type="text" name="description" defaultValue={farm.description} />
         <button type="submit">Enregistrer</button>
       </form>
     </div>
